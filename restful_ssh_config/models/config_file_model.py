@@ -19,7 +19,7 @@ SqlString = DATABASE.String
 class ConfigFile(DATABASE.Model):
     """This class sets up the fields for the Keyword model"""
 
-    # __tablename__ = 'config_files'
+    __tablename__ = 'config_files'
 
     id = Column(  # pylint: disable=invalid-name
         SqlInteger,

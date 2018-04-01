@@ -19,7 +19,7 @@ SqlText = DATABASE.Text
 class Keyword(DATABASE.Model):
     """This class sets up the fields for the Keyword model"""
 
-    # __tablename__ = 'keywords'
+    __tablename__ = 'keywords'
 
     id = Column(  # pylint: disable=invalid-name
         SqlInteger,

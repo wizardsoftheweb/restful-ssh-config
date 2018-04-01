@@ -12,7 +12,7 @@ Table = DATABASE.Table
 # pylint: enable=invalid-name
 
 KEYWORD_HOST_LOOKUP = Table(
-    'keywords',
+    'keyword_host_lookups',
     Column(
         'keyword_id',
         SqlInteger,
@@ -28,7 +28,7 @@ KEYWORD_HOST_LOOKUP = Table(
 )
 
 HOST_CONFIG_LOOKUP = Table(
-    'hosts',
+    'host_config_lookups',
     Column(
         'host_id',
         SqlInteger,

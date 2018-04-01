@@ -19,7 +19,7 @@ SqlString = DATABASE.String
 class Host(DATABASE.Model):
     """This class sets up the fields for the Keyword model"""
 
-    # __tablename__ = 'hosts'
+    __tablename__ = 'hosts'
 
     id = Column(  # pylint: disable=invalid-name
         SqlInteger,
