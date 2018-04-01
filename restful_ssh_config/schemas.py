@@ -2,11 +2,7 @@
 # pylint: disable=missing-docstring
 # pylint: disable=too-few-public-methods
 
-from json import load as json_load
-from os.path import dirname, join
-
 from sqlalchemy.orm import validates
-from marshmallow import ValidationError
 
 from restful_ssh_config import MARSHMALLOW
 from restful_ssh_config.models import (
@@ -14,14 +10,6 @@ from restful_ssh_config.models import (
     Host,
     Keyword
 )
-
-__location__ = dirname(__file__)
-DATA_DIRECTORY = join(__location__, 'data')
-DATA_FILE = join(DATA_DIRECTORY, 'keywords.json')
-
-KEYWORDS = []
-with open(DATA_FILE, 'r') as keywords_file:
-    KEYWORDS = json_load(keywords_file)
 
 
 class KeywordSchema(MARSHMALLOW.ModelSchema):
