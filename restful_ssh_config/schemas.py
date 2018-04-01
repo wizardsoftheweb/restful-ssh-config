@@ -2,6 +2,8 @@
 # pylint: disable=missing-docstring
 # pylint: disable=too-few-public-methods
 
+from sqlalchemy.orm import validates
+
 from restful_ssh_config import MARSHMALLOW
 from restful_ssh_config.models import (
     ConfigFile,
@@ -14,6 +16,11 @@ class KeywordSchema(MARSHMALLOW.ModelSchema):
 
     class Meta(object):
         model = Keyword
+
+    @validates('keyword')
+    def validates_keyword(self, keyword):  # pylint: disable=no-self-use
+        """Ensures the provided keyword is a valid OpenSSH keyword"""
+        return Keyword.validates_keyword(self, 'keyword', keyword)
 
 
 class HostSchema(MARSHMALLOW.ModelSchema):
