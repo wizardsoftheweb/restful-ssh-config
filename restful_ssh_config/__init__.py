@@ -1,5 +1,6 @@
 """This file provides the main restful_ssh_config module"""
 
+from .base_model import BaseModel
 from .application import APPLICATION, DATABASE, MARSHMALLOW
 from .models import (
     ConfigFile,
