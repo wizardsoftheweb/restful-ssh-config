@@ -5,7 +5,8 @@
 from json import load as json_load
 from os.path import dirname, join
 
-from marshmallow import validates, ValidationError
+from sqlalchemy.orm import validates
+from marshmallow import ValidationError
 
 from restful_ssh_config import MARSHMALLOW
 from restful_ssh_config.models import (
@@ -31,11 +32,7 @@ class KeywordSchema(MARSHMALLOW.ModelSchema):
     @validates('keyword')
     def validates_keyword(self, keyword):  # pylint: disable=no-self-use
         """Ensures the provided keyword is a valid OpenSSH keyword"""
-        if keyword.lower() not in KEYWORDS:
-            raise ValidationError(
-                "%s is not a current keyword (or the keywords are outdated)"
-                % (keyword)
-            )
+        return Keyword.validates_keyword(self, 'keyword', keyword)
 
 
 class HostSchema(MARSHMALLOW.ModelSchema):
