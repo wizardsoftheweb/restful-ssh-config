@@ -8,3 +8,8 @@ from .models import (
     Keyword,
     KEYWORD_HOST_LOOKUP,
 )
+from .schemas import (
+    ConfigFileSchema,
+    HostSchema,
+    KeywordSchema,
+)
