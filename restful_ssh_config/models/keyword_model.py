@@ -21,10 +21,6 @@ class Keyword(DATABASE.Model):
         Integer,
         primary_key=True,
     )
-    host_id = Column(
-        Integer,
-        ForeignKey('host.id')
-    )
     keyword = Column(
         SqlString(255),
         nullable=False
