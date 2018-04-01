@@ -1,7 +1,6 @@
 """This file provides the Keyword model"""
 # pylint: disable=too-few-public-methods
 
-from datetime import datetime
 from json import load as json_load
 from os.path import dirname, join
 
@@ -16,8 +15,6 @@ DATA_FILE = join(DATA_DIRECTORY, 'keywords.json')
 # pylint: disable=invalid-name
 # pylint: disable=no-member
 Column = DATABASE.Column
-SqlDateTime = DATABASE.DateTime
-SqlInteger = DATABASE.Integer
 SqlString = DATABASE.String
 SqlText = DATABASE.Text
 # pylint: enable=no-member
@@ -33,11 +30,6 @@ class Keyword(DATABASE.Model):
 
     __tablename__ = 'keywords'
 
-    id = Column(  # pylint: disable=invalid-name
-        'id',
-        SqlInteger,
-        primary_key=True,
-    )
     keyword = Column(
         'keyword',
         SqlString(255),
@@ -47,17 +39,6 @@ class Keyword(DATABASE.Model):
         'argument',
         SqlText,
         nullable=False,
-    )
-    created = Column(
-        'created',
-        SqlDateTime,
-        default=datetime.utcnow,
-    )
-    updated = Column(
-        'updated',
-        SqlDateTime,
-        default=datetime.utcnow,
-        onupdate=datetime.utcnow,
     )
 
     @validates('keyword')
@@ -69,4 +50,4 @@ class Keyword(DATABASE.Model):
                 % (value)
             )
             return False
-        return True
+        return value
