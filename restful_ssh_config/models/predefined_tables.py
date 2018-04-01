@@ -8,6 +8,7 @@ from sqlalchemy import (
 )
 
 KEYWORD_HOST_LOOKUP = Table(
+    'keywords',
     Column(
         'keyword_id',
         SqlInteger,
@@ -23,6 +24,7 @@ KEYWORD_HOST_LOOKUP = Table(
 )
 
 HOST_CONFIG_LOOKUP = Table(
+    'hosts',
     Column(
         'host_id',
         SqlInteger,
