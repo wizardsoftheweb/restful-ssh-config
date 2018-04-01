@@ -3,24 +3,26 @@
 
 from datetime import datetime
 
-from sqlalchemy import (
-    Column,
-    DateTime,
-    Integer,
-    String as SqlString,
-    Text as SqlText
-)
-
 from restful_ssh_config import DATABASE
+
+# pylint: disable=invalid-name
+# pylint: disable=no-member
+Column = DATABASE.Column
+DateTime = DATABASE.DateTime
+SqlInteger = DATABASE.Integer
+SqlString = DATABASE.String
+SqlText = DATABASE.Text
+# pylint: enable=no-member
+# pylint: enable=invalid-name
 
 
 class Keyword(DATABASE.Model):
     """This class sets up the fields for the Keyword model"""
 
-    __tablename__ = 'keywords'
+    # __tablename__ = 'keywords'
 
     id = Column(  # pylint: disable=invalid-name
-        Integer,
+        SqlInteger,
         primary_key=True,
     )
     keyword = Column(

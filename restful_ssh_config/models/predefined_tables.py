@@ -1,11 +1,15 @@
 """This file provides predefined lookup tables"""
 
-from sqlalchemy import (
-    Column,
-    ForeignKey,
-    Integer as SqlInteger,
-    Table,
-)
+from restful_ssh_config import DATABASE
+
+# pylint: disable=invalid-name
+# pylint: disable=no-member
+Column = DATABASE.Column
+ForeignKey = DATABASE.ForeignKey
+SqlInteger = DATABASE.Integer
+Table = DATABASE.Table
+# pylint: enable=no-member
+# pylint: enable=invalid-name
 
 KEYWORD_HOST_LOOKUP = Table(
     'keywords',
