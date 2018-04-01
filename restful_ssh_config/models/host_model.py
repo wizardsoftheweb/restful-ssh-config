@@ -24,7 +24,7 @@ class Host(DATABASE.Model):
         primary_key=True,
     )
     reference_name = Column(
-        SqlString(255)
+        SqlString(255),
     )
     config_files = DATABASE.relationship(  # pylint: disable=no-member
         'ConfigFile',
@@ -37,14 +37,14 @@ class Host(DATABASE.Model):
         lazy='subquery',
         backref=DATABASE.backref(  # pylint: disable=no-member
             'hosts',
-            lazy=True
+            lazy=True,
         ),
     )
     created = Column(
         DateTime,
-        default=datetime.utcnow
+        default=datetime.utcnow,
     )
     updated = Column(
         DateTime,
-        default=datetime.utcnow
+        default=datetime.utcnow,
     )

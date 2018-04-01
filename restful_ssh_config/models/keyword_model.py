@@ -25,17 +25,17 @@ class Keyword(DATABASE.Model):
     )
     keyword = Column(
         SqlString(255),
-        nullable=False
+        nullable=False,
     )
     argument = Column(
         SqlText,
-        nullable=False
+        nullable=False,
     )
     created = Column(
         DateTime,
-        default=datetime.utcnow
+        default=datetime.utcnow,
     )
     updated = Column(
         DateTime,
-        default=datetime.utcnow
+        default=datetime.utcnow,
     )

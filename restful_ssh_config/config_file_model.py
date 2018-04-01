@@ -24,7 +24,7 @@ class ConfigFile(DATABASE.Model):
         primary_key=True,
     )
     file_path = Column(
-        SqlString(255)
+        SqlString(255),
     )
     hosts = DATABASE.relationship(  # pylint: disable=no-member
         'Host',
@@ -33,9 +33,9 @@ class ConfigFile(DATABASE.Model):
     )
     created = Column(
         DateTime,
-        default=datetime.utcnow
+        default=datetime.utcnow,
     )
     updated = Column(
         DateTime,
-        default=datetime.utcnow
+        default=datetime.utcnow,
     )
