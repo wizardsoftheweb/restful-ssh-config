@@ -25,3 +25,6 @@ class ConfigFile(DATABASE.Model):
         secondary=HOST_CONFIG_LOOKUP,
         lazy='subquery',
     )
+
+    def __repr__(self):
+        return "<ConfigFile '%r'>" % self.file_path

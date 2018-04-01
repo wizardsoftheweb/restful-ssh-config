@@ -35,3 +35,6 @@ class Host(DATABASE.Model):
             lazy=True,
         ),
     )
+
+    def __repr__(self):
+        return "<Host %d - %r>" % (self.id, self.reference_name)

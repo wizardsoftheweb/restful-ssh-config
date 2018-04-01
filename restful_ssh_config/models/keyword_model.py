@@ -41,6 +41,9 @@ class Keyword(DATABASE.Model):
         nullable=False,
     )
 
+    def __repr__(self):
+        return "<Keyword %r: '%s'>" % (self.keyword, self.argument)
+
     @validates('keyword')
     def validates_keyword(self, key, value):  # pylint: disable=no-self-use
         """Ensures the provided keyword is a valid OpenSSH keyword"""
