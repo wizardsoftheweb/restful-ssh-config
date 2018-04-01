@@ -2,4 +2,4 @@
 
 
 from .predefined_tables import KEYWORD_HOST_LOOKUP, HOST_CONFIG_LOOKUP
-from .keyword import keyword
+from .keyword_model import Keyword
