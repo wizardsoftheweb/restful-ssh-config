@@ -25,7 +25,7 @@ READCONF_MASTER_URL = 'https://raw.githubusercontent.com/openssh/openssh-portabl
 FULL_SOURCE = get(READCONF_MASTER_URL)
 
 SORTED = False
-OPCODES_MATCH = search(OPCODES_PATTERN, FULL_SOURCE.text)
+OPCODES_MATCH = search(OPCODES_PATTERN, FULL_SOURCE.text.lower())
 if OPCODES_MATCH and OPCODES_MATCH.group('raw_codes'):
     SPACELESS = sub(r'\s', '', OPCODES_MATCH.group('raw_codes'))
     OLESS = sub(r'o(\w+)(,|$)', r'\1\2', SPACELESS)
