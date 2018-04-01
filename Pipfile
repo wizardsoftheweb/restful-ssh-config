@@ -9,6 +9,7 @@ Flask-SQLAlchemy = "*"
 marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 flask-marshmallow = "*"
+requests = "*"
 
 [dev-packages]
 
