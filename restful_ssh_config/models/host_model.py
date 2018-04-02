@@ -2,7 +2,7 @@
 # pylint: disable=too-few-public-methods
 
 
-from restful_ssh_config import DATABASE
+from restful_ssh_config import BaseModel, DATABASE
 from restful_ssh_config.models import HOST_CONFIG_LOOKUP, KEYWORD_HOST_LOOKUP
 
 # pylint: disable=invalid-name
@@ -13,7 +13,7 @@ SqlString = DATABASE.String
 # pylint: enable=invalid-name
 
 
-class Host(DATABASE.Model):
+class Host(BaseModel):
     """This class sets up the fields for the Keyword model"""
 
     __tablename__ = 'hosts'

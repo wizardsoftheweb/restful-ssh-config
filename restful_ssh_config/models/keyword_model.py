@@ -6,7 +6,7 @@ from os.path import dirname, join
 
 from sqlalchemy.orm import validates
 from marshmallow import ValidationError
-from restful_ssh_config import DATABASE
+from restful_ssh_config import BaseModel, DATABASE
 
 __location__ = dirname(__file__)
 DATA_DIRECTORY = join(dirname(__location__), 'data')
@@ -25,7 +25,7 @@ with open(DATA_FILE, 'r') as keywords_file:
     KEYWORDS = json_load(keywords_file)
 
 
-class Keyword(DATABASE.Model):
+class Keyword(BaseModel):
     """This class sets up the fields for the Keyword model"""
 
     __tablename__ = 'keywords'

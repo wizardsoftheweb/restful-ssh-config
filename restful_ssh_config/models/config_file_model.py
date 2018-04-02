@@ -1,7 +1,7 @@
 """This file provides the Keyword model"""
 # pylint: disable=too-few-public-methods
 
-from restful_ssh_config import DATABASE
+from restful_ssh_config import BaseModel, DATABASE
 from restful_ssh_config.models import HOST_CONFIG_LOOKUP
 
 # pylint: disable=invalid-name
@@ -12,7 +12,7 @@ SqlString = DATABASE.String
 # pylint: enable=invalid-name
 
 
-class ConfigFile(DATABASE.Model):
+class ConfigFile(BaseModel):
     """This class sets up the fields for the Keyword model"""
 
     __tablename__ = 'config_files'
