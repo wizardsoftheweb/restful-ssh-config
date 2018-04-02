@@ -58,3 +58,5 @@ These are things I'd like to add, but might not be included in ``v1``. If not, t
     :header: "Progress", "Feature"
 
     "0%", "Simple frontend for the API"
+    "0%", "Fill sensitive fields with dummy values"
+    "0%", "Create exportable script for replacing dummy values"
