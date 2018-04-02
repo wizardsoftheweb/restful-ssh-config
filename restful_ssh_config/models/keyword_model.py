@@ -12,7 +12,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import validates
 from marshmallow import ValidationError
 
-from restful_ssh_config import BaseModel
+from restful_ssh_config.models import BaseModel
 
 __location__ = dirname(__file__)
 DATA_DIRECTORY = join(dirname(__location__), 'data')

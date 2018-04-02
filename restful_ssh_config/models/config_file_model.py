@@ -6,8 +6,8 @@ from sqlalchemy import (
     String as SqlString,
 )
 
-from restful_ssh_config import BaseModel, DATABASE
-from restful_ssh_config.models import HOST_CONFIG_LOOKUP
+from restful_ssh_config import DATABASE
+from restful_ssh_config.models import BaseModel, HOST_CONFIG_LOOKUP
 
 
 class ConfigFile(BaseModel):
