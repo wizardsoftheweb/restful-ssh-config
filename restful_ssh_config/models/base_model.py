@@ -8,12 +8,12 @@ from sqlalchemy import (
     DateTime as SqlDateTime,
     Integer as SqlInteger,
 )
-from sqlalchemy.ext.declarative import declarative_base, declared_attr
+from sqlalchemy.ext.declarative import declared_attr
 
-BASE = declarative_base()
+from restful_ssh_config import DATABASE
 
 
-class BaseModel(BASE):
+class BaseModel(DATABASE.Model):
     """This class provides a common interface for models."""
 
     __abstract__ = True
