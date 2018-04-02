@@ -1,16 +1,13 @@
 """This file provides the Keyword model"""
 # pylint: disable=too-few-public-methods
 
+from sqlalchemy import (
+    Column,
+    String as SqlString,
+)
 
 from restful_ssh_config import BaseModel, DATABASE
 from restful_ssh_config.models import HOST_CONFIG_LOOKUP, KEYWORD_HOST_LOOKUP
-
-# pylint: disable=invalid-name
-# pylint: disable=no-member
-Column = DATABASE.Column
-SqlString = DATABASE.String
-# pylint: enable=no-member
-# pylint: enable=invalid-name
 
 
 class Host(BaseModel):
