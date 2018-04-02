@@ -1,3 +1,5 @@
+"""This file provides the Flask application and its dependents"""
+
 from flask import Flask
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy

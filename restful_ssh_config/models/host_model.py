@@ -1,10 +1,7 @@
-"""This file provides the Keyword model"""
+"""This file provides the Host model"""
 # pylint: disable=too-few-public-methods
 
-from sqlalchemy import (
-    Column,
-    String as SqlString,
-)
+from sqlalchemy import Column, String as SqlString
 
 from restful_ssh_config import DATABASE
 from restful_ssh_config.models import (
@@ -15,7 +12,7 @@ from restful_ssh_config.models import (
 
 
 class Host(BaseModel):
-    """This class sets up the fields for the Keyword model"""
+    """This class sets up the fields for the Host model"""
 
     __tablename__ = 'hosts'
 

@@ -1,5 +1,4 @@
 """This file sets up model schemas"""
-# pylint: disable=missing-docstring
 # pylint: disable=too-few-public-methods
 
 from sqlalchemy.orm import validates
@@ -13,8 +12,9 @@ from restful_ssh_config.models import (
 
 
 class KeywordSchema(MARSHMALLOW.ModelSchema):
-
+    """Provides the schema for Keywords"""
     class Meta(object):
+        """The schema's metadata"""
         model = Keyword
 
     @validates('keyword')
@@ -24,12 +24,16 @@ class KeywordSchema(MARSHMALLOW.ModelSchema):
 
 
 class HostSchema(MARSHMALLOW.ModelSchema):
+    """Provides the schema for Hosts"""
 
     class Meta(object):
+        """The schema's metadata"""
         model = Host
 
 
 class ConfigFileSchema(MARSHMALLOW.ModelSchema):
+    """Provides the schema for Config Files"""
 
     class Meta(object):
+        """The schema's metadata"""
         model = ConfigFile

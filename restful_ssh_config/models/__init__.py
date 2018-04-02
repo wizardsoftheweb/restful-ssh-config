@@ -1,4 +1,4 @@
-# pylint:disable=W,C,R
+"""This file provides the models submodule"""
 
 from .base_model import BaseModel
 from .predefined_tables import KEYWORD_HOST_LOOKUP, HOST_CONFIG_LOOKUP
