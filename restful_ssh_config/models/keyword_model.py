@@ -1,9 +1,6 @@
 """This file provides the Keyword model"""
 # pylint: disable=too-few-public-methods
 
-from json import load as json_load
-from os.path import dirname, join
-
 from sqlalchemy import (
     Column,
     String as SqlString,
@@ -12,15 +9,8 @@ from sqlalchemy import (
 from sqlalchemy.orm import validates
 from marshmallow import ValidationError
 
+from restful_ssh_config.data import KEYWORDS
 from restful_ssh_config.models import BaseModel
-
-__location__ = dirname(__file__)
-DATA_DIRECTORY = join(dirname(__location__), 'data')
-DATA_FILE = join(DATA_DIRECTORY, 'keywords.json')
-
-KEYWORDS = []
-with open(DATA_FILE, 'r') as keywords_file:
-    KEYWORDS = json_load(keywords_file)
 
 
 class Keyword(BaseModel):
