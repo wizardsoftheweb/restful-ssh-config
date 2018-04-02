@@ -42,8 +42,10 @@ class Keyword(BaseModel):
     def __repr__(self):
         return "<Keyword %r: '%s'>" % (self.keyword, self.argument)
 
+    # pylint: disable=no-self-use
+    # pylint: disable=unused-argument
     @validates('keyword')
-    def validates_keyword(self, key, value):  # pylint: disable=no-self-use
+    def validate_keyword(self, key, value):
         """Ensures the provided keyword is a valid OpenSSH keyword"""
         if value.lower() not in KEYWORDS:
             raise ValidationError(
@@ -51,3 +53,5 @@ class Keyword(BaseModel):
                 % (value)
             )
         return value
+    # pylint: enable=unused-argument
+    # pylint: enable=no-self-use

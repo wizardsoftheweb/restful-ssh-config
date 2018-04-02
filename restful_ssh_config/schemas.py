@@ -18,7 +18,7 @@ class KeywordSchema(MARSHMALLOW.ModelSchema):
         model = Keyword
 
     @validates('keyword')
-    def validates_keyword(self, keyword):  # pylint: disable=no-self-use
+    def validate_keyword(self, keyword):  # pylint: disable=no-self-use
         """Ensures the provided keyword is a valid OpenSSH keyword"""
         return Keyword.validates_keyword(self, 'keyword', keyword)
 
