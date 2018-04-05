@@ -1,9 +1,9 @@
 """This file sets up model schemas"""
 # pylint: disable=too-few-public-methods
 
+from marshmallow_sqlalchemy import ModelSchema
 from sqlalchemy.orm import validates
 
-from restful_ssh_config import MARSHMALLOW
 from restful_ssh_config.models import (
     ConfigFile,
     Host,
@@ -11,7 +11,7 @@ from restful_ssh_config.models import (
 )
 
 
-class KeywordSchema(MARSHMALLOW.ModelSchema):
+class KeywordSchema(ModelSchema):
     """Provides the schema for Keywords"""
     class Meta(object):
         """The schema's metadata"""
@@ -23,7 +23,7 @@ class KeywordSchema(MARSHMALLOW.ModelSchema):
         return Keyword.validates_keyword(self, 'keyword', keyword)
 
 
-class HostSchema(MARSHMALLOW.ModelSchema):
+class HostSchema(ModelSchema):
     """Provides the schema for Hosts"""
 
     class Meta(object):
@@ -31,7 +31,7 @@ class HostSchema(MARSHMALLOW.ModelSchema):
         model = Host
 
 
-class ConfigFileSchema(MARSHMALLOW.ModelSchema):
+class ConfigFileSchema(ModelSchema):
     """Provides the schema for Config Files"""
 
     class Meta(object):
