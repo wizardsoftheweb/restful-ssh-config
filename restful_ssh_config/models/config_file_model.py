@@ -22,4 +22,4 @@ class ConfigFile(BaseModel):
     )
 
     def __repr__(self):
-        return "<ConfigFile '%r'>" % self.file_path
+        return "<ConfigFile %r>" % self.file_path
